@@ -1,0 +1,3 @@
+module SecondAmendmentWholesale
+  VERSION = "0.1.0"
+end
