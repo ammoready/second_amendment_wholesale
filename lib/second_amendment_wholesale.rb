@@ -5,6 +5,7 @@ require "second_amendment_wholesale/api"
 require "second_amendment_wholesale/client"
 require "second_amendment_wholesale/error"
 require "second_amendment_wholesale/response"
+require "second_amendment_wholesale/user"
 
 module SecondAmendmentWholesale
 
