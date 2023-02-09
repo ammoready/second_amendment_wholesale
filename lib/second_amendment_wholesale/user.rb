@@ -8,7 +8,7 @@ module SecondAmendmentWholesale
     end
 
     def authenticated?
-      @client.access_token.present?
+      @client.bearer_token.present?
     end
 
   end

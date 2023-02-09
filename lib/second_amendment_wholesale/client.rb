@@ -5,7 +5,7 @@ module SecondAmendmentWholesale
 
     include SecondAmendmentWholesale::API
 
-    attr_accessor :access_token
+    attr_accessor :bearer_token
 
     def initialize(options = {})
       requires!(options, :token)
@@ -28,7 +28,7 @@ module SecondAmendmentWholesale
       )
 
       if response.body.present?
-        self.access_token = @options[:token]
+        self.bearer_token = @options[:token]
       else
         raise SecondAmendmentWholesale::Error::NotAuthorized.new(response.body)
       end
