@@ -2,6 +2,7 @@ require 'net/http'
 
 module SecondAmendmentWholesale
   module API
+    
     ROOT_API_URL = 'https://staging.2ndamendmentwholesale.com/rest/V1'.freeze
     USER_AGENT = "SecondAmendmentWholesaleRubyGem/#{SecondAmendmentWholesale::VERSION}".freeze
 
