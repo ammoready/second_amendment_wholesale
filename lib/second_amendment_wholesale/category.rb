@@ -3,6 +3,9 @@ module SecondAmendmentWholesale
 
     include SecondAmendmentWholesale::API
 
+    #Excludes brands and other non-categories returned from 2AW's Categories endpoint
+    EXCLUDED_CATEGORY_IDS = [3, 26, 27]
+
     def initialize(options = {})
       requires!(options, :token)
 
@@ -30,10 +33,12 @@ module SecondAmendmentWholesale
 
     def extract_categories(response, categories = [])
       response.each do |category|
-        categories << map_hash(category)
+        unless (EXCLUDED_CATEGORY_IDS & [category[:id], category[:parent_id]]).any?
+          categories << map_hash(category)
 
-        if category[:children_data].present?
-          extract_categories(category[:children_data], categories)
+          if category[:children_data].present?
+            extract_categories(category[:children_data], categories)
+          end
         end
       end
 
