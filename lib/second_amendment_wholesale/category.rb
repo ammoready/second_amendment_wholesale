@@ -33,8 +33,8 @@ module SecondAmendmentWholesale
 
     def extract_categories(response, categories = [])
       response.each do |category|
-        unless (EXCLUDED_CATEGORY_IDS & [category[:id], category[:parent_id]]).any?
-          categories << map_hash(category)
+        unless EXCLUDED_CATEGORY_IDS.include?(category[:id])
+          categories << map_hash(category) unless category[:name] == "Firearms"
 
           if category[:children_data].present?
             extract_categories(category[:children_data], categories)
