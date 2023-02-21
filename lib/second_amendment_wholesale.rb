@@ -2,6 +2,8 @@ require "second_amendment_wholesale/base"
 require "second_amendment_wholesale/version"
 
 require "second_amendment_wholesale/api"
+require "second_amendment_wholesale/attribute"
+require "second_amendment_wholesale/catalog"
 require "second_amendment_wholesale/category"
 require "second_amendment_wholesale/client"
 require "second_amendment_wholesale/error"
