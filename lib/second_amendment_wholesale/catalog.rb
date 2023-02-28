@@ -47,7 +47,7 @@ module SecondAmendmentWholesale
         price: item[:dealer_price],
         map_price: item[:retail_map],
         msrp: item[:retail_price],
-        quantity: item[:inventory_quantity],
+        quantity: item[:inventory_qty],
         weight: item[:weight],
         item_identifier: item[:stock_number],
         brand: item[:manufacturer_name],
