@@ -28,7 +28,7 @@ module SecondAmendmentWholesale
       response = get_request("feed/productV2", @headers)
 
       response.body.each do |item|
-        products << map_product(item)
+        products << map_product(item) unless item[:allocated_closeout] == "Allocated"
       end
 
       products
