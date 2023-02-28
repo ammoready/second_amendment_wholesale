@@ -25,17 +25,17 @@ module SecondAmendmentWholesale
       end
     end
 
-    def [](key)
-      @data&.[](key)
-    end
+    # def [](key)
+    #   @data&.[](key)
+    # end
 
     def body
       @data
     end
 
-    def fetch(key)
-      @data.fetch(key)
-    end
+    # def fetch(key)
+    #   @data.fetch(key)
+    # end
 
 
   end

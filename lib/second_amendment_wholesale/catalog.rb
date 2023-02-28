@@ -5,8 +5,8 @@ module SecondAmendmentWholesale
 
     def initialize(options = {})
       requires!(options, :token)
-      @options = options
 
+      @options = options
       @headers = [ 
         *auth_header(@options[:token]),
         *content_type_header('application/json'),
