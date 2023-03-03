@@ -19,24 +19,21 @@ module SecondAmendmentWholesale
           _data.deep_symbolize_keys
         when _data.is_a?(Array)
           _data.map(&:deep_symbolize_keys)
+        else
+          _data
         end
       else
         raise SecondAmendmentWholesale::Error::RequestError.new(@response.body)
       end
     end
 
-    # def [](key)
-    #   @data&.[](key)
-    # end
+    def [](key)
+      @data&.[](key)
+    end
 
     def body
       @data
     end
-
-    # def fetch(key)
-    #   @data.fetch(key)
-    # end
-
-
+    
   end
 end

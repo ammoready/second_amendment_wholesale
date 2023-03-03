@@ -7,6 +7,7 @@ require "second_amendment_wholesale/catalog"
 require "second_amendment_wholesale/category"
 require "second_amendment_wholesale/error"
 require "second_amendment_wholesale/inventory"
+require "second_amendment_wholesale/order"
 require "second_amendment_wholesale/response"
 require "second_amendment_wholesale/user"
 
