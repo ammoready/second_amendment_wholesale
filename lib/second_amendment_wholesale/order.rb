@@ -6,6 +6,7 @@ module SecondAmendmentWholesale
     ENDPOINTS = {
       cart: "carts/mine".freeze,
       items: 'carts/mine/items'.freeze,
+      po_number: 'carts/mine/set-po-number'.freeze,
     }
 
     def initialize(options = {})
@@ -46,10 +47,19 @@ module SecondAmendmentWholesale
       post_request(endpoint, item, @headers)
     end
 
-    # check for existing cart GET /V1/carts/mine
-    # if none exist create one POST /rest/V1/carts/mine
-    # a "quote id" will be received from one of these endpoints, 22205
-    # loop through items and add them to the order with the quote id POST /rest/V1/carts/mine/items
+    def add_po(quote_id, po_number)
+      endpoint = ENDPOINTS[:po_number]
+
+      body = {
+        "cartId": "#{quote_id}",
+        "poNumber": {
+            "poNumber": "#{po_number}"
+        }
+      }
+
+      put_request(endpoint, body, @headers)
+    end
+
     # at some point our fulfillment number should be added as the PO number in 2AW PUT /rest/V1/carts/mine/set-po-number
     # get region_id for state GET /V1/directory/countries/US
     # get shipping options for shipping address, include region_id, /V1/carts/mine/estimate-shipping-methods
