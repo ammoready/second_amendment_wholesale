@@ -18,6 +18,12 @@ module SecondAmendmentWholesale
       submit_request(request, data, headers)
     end
 
+    def put_request(endpoint, data = {}, headers = {})
+      request = Net::HTTP::Put.new(request_url(endpoint))
+
+      submit_request(request, data, headers)
+    end
+
     def delete_request(endpoint, headers = {})
       request = Net::HTTP::Delete.new(request_url(endpoint))
 
