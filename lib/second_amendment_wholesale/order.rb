@@ -7,6 +7,8 @@ module SecondAmendmentWholesale
       cart: "carts/mine".freeze,
       items: 'carts/mine/items'.freeze,
       po_number: 'carts/mine/set-po-number'.freeze,
+      regions: 'directory/countries/US'.freeze,
+      shipping_methods: 'carts/mine/estimate-shipping-methods'.freeze,
     }
 
     def initialize(options = {})
@@ -47,7 +49,7 @@ module SecondAmendmentWholesale
       post_request(endpoint, item, @headers)
     end
 
-    def add_po(quote_id, po_number)
+    def add_po_number(quote_id, po_number)
       endpoint = ENDPOINTS[:po_number]
 
       body = {
@@ -57,12 +59,31 @@ module SecondAmendmentWholesale
         }
       }
 
-      put_request(endpoint, body, @headers)
+     put_request(endpoint, body, @headers).body
     end
 
-    # at some point our fulfillment number should be added as the PO number in 2AW PUT /rest/V1/carts/mine/set-po-number
-    # get region_id for state GET /V1/directory/countries/US
-    # get shipping options for shipping address, include region_id, /V1/carts/mine/estimate-shipping-methods
+    def get_shipping_methods(address)
+      endpoint = ENDPOINTS[:shipping_methods]
+
+      regions = get_regions
+
+      address[:region_id] = regions.find{ |region| region[:code] == address[:region_code]}[:id]
+
+      body = {
+        "address": address
+      }
+
+      post_request(endpoint, body, @headers).body
+    end
+
+    private
+
+    def get_regions
+      endpoint = ENDPOINTS[:regions]
+
+      get_request(endpoint, @headers).body[:available_regions]
+    end
+
     # set shipping/billing with shipping method, POST V1/carts/mine/shipping-information, this also returns available payment methods to be used later
     # get agreement ids, V1/carts/licence
     # post payment method from before, with agreement ids, /V1/carts/mine/payment-information
