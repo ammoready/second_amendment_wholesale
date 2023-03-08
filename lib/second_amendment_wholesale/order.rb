@@ -6,8 +6,11 @@ module SecondAmendmentWholesale
     ENDPOINTS = {
       cart: "carts/mine".freeze,
       items: 'carts/mine/items'.freeze,
+      licence: "carts/licence".freeze,
+      payment_information: 'carts/mine/payment-information'.freeze,
       po_number: 'carts/mine/set-po-number'.freeze,
       regions: 'directory/countries/US'.freeze,
+      shipping_information: 'carts/mine/shipping-information'.freeze,
       shipping_methods: 'carts/mine/estimate-shipping-methods'.freeze,
     }
 
@@ -73,6 +76,35 @@ module SecondAmendmentWholesale
         "address": address
       }
 
+      shipping_methods = post_request(endpoint, body, @headers).body
+      
+      {
+        "address": address,
+        "shipping_methods": shipping_methods
+      }
+    end
+
+    def add_shipping_information(shipping_data)
+      endpoint = ENDPOINTS[:shipping_information]
+
+      post_request(endpoint, shipping_data, @headers)[:payment_methods]
+    end
+
+    def submit_payment(payment_method)
+      endpoint = ENDPOINTS[:payment_information]
+
+      agreement_ids = get_agreement_ids
+
+      body = {
+        "payment_method": {
+          "method": payment_method,
+          "extension_attributes": {
+            "agreement_ids": agreement_ids
+          }
+        }
+      }
+      
+      # This response is the order number from 2AW
       post_request(endpoint, body, @headers).body
     end
 
@@ -84,9 +116,11 @@ module SecondAmendmentWholesale
       get_request(endpoint, @headers).body[:available_regions]
     end
 
-    # set shipping/billing with shipping method, POST V1/carts/mine/shipping-information, this also returns available payment methods to be used later
-    # get agreement ids, V1/carts/licence
-    # post payment method from before, with agreement ids, /V1/carts/mine/payment-information
-    # save order number from response on fulfillment
+    def get_agreement_ids
+      endpoint = ENDPOINTS[:licence]
+
+      get_request(endpoint, @headers).body.pluck(:agreement_id)
+    end
+
   end
 end
