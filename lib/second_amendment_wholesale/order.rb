@@ -30,7 +30,7 @@ module SecondAmendmentWholesale
       get_request(endpoint, @headers).body
     end
 
-    def post_cart
+    def create_cart
       endpoint = ENDPOINTS[:cart]
 
       post_request(endpoint, @headers).body
@@ -52,7 +52,7 @@ module SecondAmendmentWholesale
       post_request(endpoint, item, @headers)
     end
 
-    def add_po_number(quote_id, po_number)
+    def add_po_number(po_number, quote_id)
       endpoint = ENDPOINTS[:po_number]
 
       body = {
@@ -62,26 +62,23 @@ module SecondAmendmentWholesale
         }
       }
 
-     put_request(endpoint, body, @headers).body
+     put_request(endpoint, body, @headers)
+    end
+
+    def get_regions
+      endpoint = ENDPOINTS[:regions]
+
+      get_request(endpoint, @headers).body[:available_regions]
     end
 
     def get_shipping_methods(address)
       endpoint = ENDPOINTS[:shipping_methods]
 
-      regions = get_regions
-
-      address[:region_id] = regions.find{ |region| region[:code] == address[:region_code]}[:id]
-
       body = {
         "address": address
       }
 
-      shipping_methods = post_request(endpoint, body, @headers).body
-      
-      {
-        "address": address,
-        "shipping_methods": shipping_methods
-      }
+      post_request(endpoint, body, @headers).body
     end
 
     def add_shipping_information(shipping_data)
@@ -109,12 +106,6 @@ module SecondAmendmentWholesale
     end
 
     private
-
-    def get_regions
-      endpoint = ENDPOINTS[:regions]
-
-      get_request(endpoint, @headers).body[:available_regions]
-    end
 
     def get_agreement_ids
       endpoint = ENDPOINTS[:licence]
