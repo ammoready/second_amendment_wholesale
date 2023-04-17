@@ -4,6 +4,7 @@ module SecondAmendmentWholesale
     include SecondAmendmentWholesale::API
 
     ENDPOINTS = {
+      billing_address: "customers/me/billingAddress".freeze,
       cart: "carts/mine".freeze,
       items: 'carts/mine/items'.freeze,
       licence: "carts/licence".freeze,
@@ -81,28 +82,48 @@ module SecondAmendmentWholesale
       post_request(endpoint, body, @headers).body
     end
 
-    def add_shipping_information(shipping_data)
+    def get_billing_address
+      endpoint = ENDPOINTS[:billing_address]
+
+      billing_address = get_request(endpoint, @headers).body
+      billing_address.except(:region).merge(billing_address[:region].slice(:region, :region_code))
+    end
+
+    def add_shipping_information(address_info)
       endpoint = ENDPOINTS[:shipping_information]
 
-      post_request(endpoint, shipping_data, @headers)[:payment_methods]
+      body = {
+        "address_information": address_info
+      }
+
+      post_request(endpoint, body, @headers)[:payment_methods]
     end
 
     def submit_payment(payment_method)
       endpoint = ENDPOINTS[:payment_information]
 
-      agreement_ids = get_agreement_ids
-
       body = {
         "payment_method": {
           "method": payment_method,
           "extension_attributes": {
-            "agreement_ids": agreement_ids
+            "agreement_ids": get_agreement_ids
           }
         }
       }
       
-      # This response is the order number from 2AW
       post_request(endpoint, body, @headers).body
+    end
+
+    def get_increment_id(order_id)
+      get_request("orders/#{order_id}", @headers).body[:increment_id]
+    end
+
+    def add_comment(order_id, comment)
+      body = {
+        "comment": comment
+      }
+
+      post_request("order/#{order_id}/comments", body, @headers)
     end
 
     private
