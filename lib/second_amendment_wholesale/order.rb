@@ -28,13 +28,13 @@ module SecondAmendmentWholesale
     def get_cart
       endpoint = ENDPOINTS[:cart]
 
-      get_request(endpoint, @headers).body
+      get_request(endpoint, @headers)
     end
 
     def create_cart
       endpoint = ENDPOINTS[:cart]
 
-      post_request(endpoint, @headers).body
+      post_request(endpoint, {}, @headers)
     end
 
     def delete_cart_items(cart_items)
@@ -69,7 +69,7 @@ module SecondAmendmentWholesale
     def get_regions
       endpoint = ENDPOINTS[:regions]
 
-      get_request(endpoint, @headers).body[:available_regions]
+      get_request(endpoint, @headers)[:available_regions]
     end
 
     def get_shipping_methods(address)
@@ -79,14 +79,13 @@ module SecondAmendmentWholesale
         "address": address
       }
 
-      post_request(endpoint, body, @headers).body
+      post_request(endpoint, body, @headers)
     end
 
     def get_billing_address
       endpoint = ENDPOINTS[:billing_address]
 
-      billing_address = get_request(endpoint, @headers).body
-      billing_address.except(:region).merge(billing_address[:region].slice(:region, :region_code))
+      get_request(endpoint, @headers)
     end
 
     def add_shipping_information(address_info)
@@ -96,7 +95,7 @@ module SecondAmendmentWholesale
         "address_information": address_info
       }
 
-      post_request(endpoint, body, @headers)[:payment_methods]
+      post_request(endpoint, body, @headers)
     end
 
     def submit_payment(payment_method)
@@ -111,11 +110,11 @@ module SecondAmendmentWholesale
         }
       }
       
-      post_request(endpoint, body, @headers).body
+      post_request(endpoint, body, @headers)
     end
 
     def get_increment_id(order_id)
-      get_request("orders/#{order_id}", @headers).body[:increment_id]
+      get_request("orders/#{order_id}", @headers)
     end
 
     def add_comment(order_id, comment)
