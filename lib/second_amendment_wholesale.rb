@@ -35,4 +35,3 @@ module SecondAmendmentWholesale
     end
   end
 end
-
