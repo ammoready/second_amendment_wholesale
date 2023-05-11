@@ -1,0 +1,662 @@
+{
+  "id": 2,
+  "parent_id": 1,
+  "name": "Default Category",
+  "is_active": true,
+  "position": 1,
+  "level": 1,
+  "product_count": 2460,
+  "children_data": [
+      {
+          "id": 19,
+          "parent_id": 2,
+          "name": "Firearms",
+          "is_active": true,
+          "position": 10,
+          "level": 2,
+          "product_count": 1020,
+          "children_data": [
+              {
+                  "id": 21,
+                  "parent_id": 19,
+                  "name": "Handguns",
+                  "is_active": true,
+                  "position": 1,
+                  "level": 3,
+                  "product_count": 425,
+                  "children_data": [
+                      {
+                          "id": 28,
+                          "parent_id": 21,
+                          "name": "Pistols",
+                          "is_active": true,
+                          "position": 1,
+                          "level": 4,
+                          "product_count": 422,
+                          "children_data": []
+                      },
+                      {
+                          "id": 29,
+                          "parent_id": 21,
+                          "name": "Revolvers",
+                          "is_active": true,
+                          "position": 2,
+                          "level": 4,
+                          "product_count": 3,
+                          "children_data": []
+                      }
+                  ]
+              },
+              {
+                  "id": 53,
+                  "parent_id": 19,
+                  "name": "Lowers",
+                  "is_active": true,
+                  "position": 2,
+                  "level": 3,
+                  "product_count": 98,
+                  "children_data": []
+              },
+              {
+                  "id": 101,
+                  "parent_id": 19,
+                  "name": "NFA",
+                  "is_active": true,
+                  "position": 3,
+                  "level": 3,
+                  "product_count": 17,
+                  "children_data": []
+              },
+              {
+                  "id": 98,
+                  "parent_id": 19,
+                  "name": "Non-NFA \"Firearm\"",
+                  "is_active": true,
+                  "position": 4,
+                  "level": 3,
+                  "product_count": 30,
+                  "children_data": []
+              },
+              {
+                  "id": 30,
+                  "parent_id": 19,
+                  "name": "Rifles",
+                  "is_active": true,
+                  "position": 5,
+                  "level": 3,
+                  "product_count": 351,
+                  "children_data": [
+                      {
+                          "id": 32,
+                          "parent_id": 30,
+                          "name": "AK",
+                          "is_active": true,
+                          "position": 1,
+                          "level": 4,
+                          "product_count": 43,
+                          "children_data": []
+                      },
+                      {
+                          "id": 33,
+                          "parent_id": 30,
+                          "name": "AR",
+                          "is_active": true,
+                          "position": 2,
+                          "level": 4,
+                          "product_count": 266,
+                          "children_data": []
+                      },
+                      {
+                          "id": 107,
+                          "parent_id": 30,
+                          "name": "Bolt",
+                          "is_active": true,
+                          "position": 3,
+                          "level": 4,
+                          "product_count": 25,
+                          "children_data": []
+                      }
+                  ]
+              },
+              {
+                  "id": 31,
+                  "parent_id": 19,
+                  "name": "Shotguns",
+                  "is_active": true,
+                  "position": 6,
+                  "level": 3,
+                  "product_count": 134,
+                  "children_data": [
+                      {
+                          "id": 149,
+                          "parent_id": 31,
+                          "name": "Lever",
+                          "is_active": true,
+                          "position": 1,
+                          "level": 4,
+                          "product_count": 4,
+                          "children_data": []
+                      },
+                      {
+                          "id": 150,
+                          "parent_id": 31,
+                          "name": "Over/Under",
+                          "is_active": true,
+                          "position": 2,
+                          "level": 4,
+                          "product_count": 7,
+                          "children_data": []
+                      },
+                      {
+                          "id": 151,
+                          "parent_id": 31,
+                          "name": "Pump",
+                          "is_active": true,
+                          "position": 3,
+                          "level": 4,
+                          "product_count": 32,
+                          "children_data": []
+                      },
+                      {
+                          "id": 152,
+                          "parent_id": 31,
+                          "name": "Semi-Automatic",
+                          "is_active": true,
+                          "position": 4,
+                          "level": 4,
+                          "product_count": 71,
+                          "children_data": []
+                      },
+                      {
+                          "id": 153,
+                          "parent_id": 31,
+                          "name": "Side-By-Side",
+                          "is_active": true,
+                          "position": 5,
+                          "level": 4,
+                          "product_count": 3,
+                          "children_data": []
+                      }
+                  ]
+              }
+          ]
+      },
+      {
+          "id": 20,
+          "parent_id": 2,
+          "name": "Accessories",
+          "is_active": true,
+          "position": 11,
+          "level": 2,
+          "product_count": 1246,
+          "children_data": [
+              {
+                  "id": 76,
+                  "parent_id": 20,
+                  "name": "Cleaning Supplies",
+                  "is_active": true,
+                  "position": 1,
+                  "level": 3,
+                  "product_count": 8,
+                  "children_data": []
+              },
+              {
+                  "id": 81,
+                  "parent_id": 20,
+                  "name": "Gun Cases",
+                  "is_active": true,
+                  "position": 2,
+                  "level": 3,
+                  "product_count": 44,
+                  "children_data": [
+                      {
+                          "id": 131,
+                          "parent_id": 81,
+                          "name": "Backpacks",
+                          "is_active": true,
+                          "position": 1,
+                          "level": 4,
+                          "product_count": 21,
+                          "children_data": []
+                      },
+                      {
+                          "id": 134,
+                          "parent_id": 81,
+                          "name": "Rifle Cases",
+                          "is_active": true,
+                          "position": 2,
+                          "level": 4,
+                          "product_count": 13,
+                          "children_data": []
+                      },
+                      {
+                          "id": 135,
+                          "parent_id": 81,
+                          "name": "Pistol Cases",
+                          "is_active": true,
+                          "position": 3,
+                          "level": 4,
+                          "product_count": 2,
+                          "children_data": []
+                      },
+                      {
+                          "id": 136,
+                          "parent_id": 81,
+                          "name": "Truck Gun Cases",
+                          "is_active": true,
+                          "position": 4,
+                          "level": 4,
+                          "product_count": 1,
+                          "children_data": []
+                      },
+                      {
+                          "id": 138,
+                          "parent_id": 81,
+                          "name": "Bags",
+                          "is_active": true,
+                          "position": 5,
+                          "level": 4,
+                          "product_count": 4,
+                          "children_data": []
+                      }
+                  ]
+              },
+              {
+                  "id": 55,
+                  "parent_id": 20,
+                  "name": "Gun Parts",
+                  "is_active": true,
+                  "position": 3,
+                  "level": 3,
+                  "product_count": 774,
+                  "children_data": [
+                      {
+                          "id": 87,
+                          "parent_id": 55,
+                          "name": "Barrels",
+                          "is_active": true,
+                          "position": 1,
+                          "level": 4,
+                          "product_count": 55,
+                          "children_data": []
+                      },
+                      {
+                          "id": 130,
+                          "parent_id": 55,
+                          "name": "Bolt Carrier Groups",
+                          "is_active": true,
+                          "position": 2,
+                          "level": 4,
+                          "product_count": 15,
+                          "children_data": []
+                      },
+                      {
+                          "id": 45,
+                          "parent_id": 55,
+                          "name": "Buttstocks & Buttpads",
+                          "is_active": true,
+                          "position": 3,
+                          "level": 4,
+                          "product_count": 39,
+                          "children_data": []
+                      },
+                      {
+                          "id": 69,
+                          "parent_id": 55,
+                          "name": "Charging Handles",
+                          "is_active": true,
+                          "position": 4,
+                          "level": 4,
+                          "product_count": 23,
+                          "children_data": []
+                      },
+                      {
+                          "id": 46,
+                          "parent_id": 55,
+                          "name": "Foregrips & Pistol Grips",
+                          "is_active": true,
+                          "position": 5,
+                          "level": 4,
+                          "product_count": 39,
+                          "children_data": []
+                      },
+                      {
+                          "id": 75,
+                          "parent_id": 55,
+                          "name": "Glock Upgrades",
+                          "is_active": true,
+                          "position": 6,
+                          "level": 4,
+                          "product_count": 40,
+                          "children_data": []
+                      },
+                      {
+                          "id": 56,
+                          "parent_id": 55,
+                          "name": "Handguards",
+                          "is_active": true,
+                          "position": 7,
+                          "level": 4,
+                          "product_count": 178,
+                          "children_data": []
+                      },
+                      {
+                          "id": 74,
+                          "parent_id": 55,
+                          "name": "Lower Parts Kits",
+                          "is_active": true,
+                          "position": 8,
+                          "level": 4,
+                          "product_count": 7,
+                          "children_data": []
+                      },
+                      {
+                          "id": 71,
+                          "parent_id": 55,
+                          "name": "Misc. AK Parts",
+                          "is_active": true,
+                          "position": 9,
+                          "level": 4,
+                          "product_count": 23,
+                          "children_data": []
+                      },
+                      {
+                          "id": 57,
+                          "parent_id": 55,
+                          "name": "Misc. AR Parts",
+                          "is_active": true,
+                          "position": 10,
+                          "level": 4,
+                          "product_count": 122,
+                          "children_data": []
+                      },
+                      {
+                          "id": 44,
+                          "parent_id": 55,
+                          "name": "Muzzle Devices",
+                          "is_active": true,
+                          "position": 11,
+                          "level": 4,
+                          "product_count": 70,
+                          "children_data": []
+                      },
+                      {
+                          "id": 68,
+                          "parent_id": 55,
+                          "name": "Safety Levers",
+                          "is_active": true,
+                          "position": 12,
+                          "level": 4,
+                          "product_count": 17,
+                          "children_data": []
+                      },
+                      {
+                          "id": 41,
+                          "parent_id": 55,
+                          "name": "Sights",
+                          "is_active": true,
+                          "position": 13,
+                          "level": 4,
+                          "product_count": 46,
+                          "children_data": []
+                      },
+                      {
+                          "id": 73,
+                          "parent_id": 55,
+                          "name": "Triggers",
+                          "is_active": true,
+                          "position": 16,
+                          "level": 4,
+                          "product_count": 43,
+                          "children_data": []
+                      },
+                      {
+                          "id": 59,
+                          "parent_id": 55,
+                          "name": "Upper Receivers & Assemblies",
+                          "is_active": true,
+                          "position": 17,
+                          "level": 4,
+                          "product_count": 75,
+                          "children_data": []
+                      }
+                  ]
+              },
+              {
+                  "id": 42,
+                  "parent_id": 20,
+                  "name": "Holsters",
+                  "is_active": true,
+                  "position": 4,
+                  "level": 3,
+                  "product_count": 0,
+                  "children_data": []
+              },
+              {
+                  "id": 85,
+                  "parent_id": 20,
+                  "name": "Lasers/Lights",
+                  "is_active": true,
+                  "position": 5,
+                  "level": 3,
+                  "product_count": 20,
+                  "children_data": []
+              },
+              {
+                  "id": 35,
+                  "parent_id": 20,
+                  "name": "Magazines",
+                  "is_active": true,
+                  "position": 6,
+                  "level": 3,
+                  "product_count": 207,
+                  "children_data": [
+                      {
+                          "id": 36,
+                          "parent_id": 35,
+                          "name": "Drum",
+                          "is_active": true,
+                          "position": 1,
+                          "level": 4,
+                          "product_count": 51,
+                          "children_data": []
+                      },
+                      {
+                          "id": 37,
+                          "parent_id": 35,
+                          "name": "Pistol",
+                          "is_active": true,
+                          "position": 2,
+                          "level": 4,
+                          "product_count": 91,
+                          "children_data": []
+                      },
+                      {
+                          "id": 38,
+                          "parent_id": 35,
+                          "name": "Rifle",
+                          "is_active": true,
+                          "position": 3,
+                          "level": 4,
+                          "product_count": 74,
+                          "children_data": []
+                      },
+                      {
+                          "id": 39,
+                          "parent_id": 35,
+                          "name": "Shotgun",
+                          "is_active": true,
+                          "position": 4,
+                          "level": 4,
+                          "product_count": 23,
+                          "children_data": []
+                      }
+                  ]
+              },
+              {
+                  "id": 40,
+                  "parent_id": 20,
+                  "name": "Optics",
+                  "is_active": true,
+                  "position": 7,
+                  "level": 3,
+                  "product_count": 18,
+                  "children_data": [
+                      {
+                          "id": 80,
+                          "parent_id": 40,
+                          "name": "Optic Mounts",
+                          "is_active": true,
+                          "position": 1,
+                          "level": 4,
+                          "product_count": 18,
+                          "children_data": []
+                      },
+                      {
+                          "id": 79,
+                          "parent_id": 40,
+                          "name": "Red Dots",
+                          "is_active": true,
+                          "position": 2,
+                          "level": 4,
+                          "product_count": 0,
+                          "children_data": []
+                      },
+                      {
+                          "id": 78,
+                          "parent_id": 40,
+                          "name": "Scopes",
+                          "is_active": true,
+                          "position": 3,
+                          "level": 4,
+                          "product_count": 0,
+                          "children_data": []
+                      }
+                  ]
+              },
+              {
+                  "id": 43,
+                  "parent_id": 20,
+                  "name": "Pistol Braces",
+                  "is_active": true,
+                  "position": 8,
+                  "level": 3,
+                  "product_count": 120,
+                  "children_data": []
+              },
+              {
+                  "id": 67,
+                  "parent_id": 20,
+                  "name": "Slings",
+                  "is_active": true,
+                  "position": 9,
+                  "level": 3,
+                  "product_count": 15,
+                  "children_data": []
+              },
+              {
+                  "id": 154,
+                  "parent_id": 20,
+                  "name": "Suppressors",
+                  "is_active": true,
+                  "position": 10,
+                  "level": 3,
+                  "product_count": 4,
+                  "children_data": []
+              },
+              {
+                  "id": 77,
+                  "parent_id": 20,
+                  "name": "Tools",
+                  "is_active": true,
+                  "position": 11,
+                  "level": 3,
+                  "product_count": 15,
+                  "children_data": []
+              }
+          ]
+      },
+      {
+          "id": 24,
+          "parent_id": 2,
+          "name": "Ammo",
+          "is_active": true,
+          "position": 12,
+          "level": 2,
+          "product_count": 118,
+          "children_data": [
+              {
+                  "id": 47,
+                  "parent_id": 24,
+                  "name": "Handgun",
+                  "is_active": true,
+                  "position": 1,
+                  "level": 3,
+                  "product_count": 87,
+                  "children_data": []
+              },
+              {
+                  "id": 48,
+                  "parent_id": 24,
+                  "name": "Rifle",
+                  "is_active": true,
+                  "position": 2,
+                  "level": 3,
+                  "product_count": 30,
+                  "children_data": []
+              },
+              {
+                  "id": 49,
+                  "parent_id": 24,
+                  "name": "Shotgun",
+                  "is_active": true,
+                  "position": 3,
+                  "level": 3,
+                  "product_count": 1,
+                  "children_data": []
+              }
+          ]
+      },
+      {
+          "id": 25,
+          "parent_id": 2,
+          "name": "Flamethrowers",
+          "is_active": true,
+          "position": 13,
+          "level": 2,
+          "product_count": 78,
+          "children_data": [
+              {
+                  "id": 51,
+                  "parent_id": 25,
+                  "name": "XM42 Gen 3",
+                  "is_active": false,
+                  "position": 1,
+                  "level": 3,
+                  "product_count": 6,
+                  "children_data": []
+              },
+              {
+                  "id": 50,
+                  "parent_id": 25,
+                  "name": "XM42 Lite",
+                  "is_active": true,
+                  "position": 2,
+                  "level": 3,
+                  "product_count": 19,
+                  "children_data": []
+              },
+              {
+                  "id": 93,
+                  "parent_id": 25,
+                  "name": "XM42 Modular",
+                  "is_active": true,
+                  "position": 3,
+                  "level": 3,
+                  "product_count": 27,
+                  "children_data": []
+              }
+          ]
+      }
+  ]
+}

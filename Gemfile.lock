@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    second_amendment_wholesale (0.1.3)
+    second_amendment_wholesale (0.1.0)
 
 GEM
   remote: https://rubygems.org/
