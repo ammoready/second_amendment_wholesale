@@ -28,10 +28,12 @@ module SecondAmendmentWholesale
   end
 
   class Configuration
-    # attr_accessor :debug_mode
+    attr_accessor :proxy_address
+    attr_accessor :proxy_port
 
     def initialize
-      # @debug_mode     ||= false
+      @proxy_address ||= nil
+      @proxy_port    ||= nil
     end
   end
 end

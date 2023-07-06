@@ -67,6 +67,5 @@ module SecondAmendmentWholesale
     def request_url(endpoint)
       [ROOT_API_URL, endpoint].join('/')
     end
-
   end
 end
