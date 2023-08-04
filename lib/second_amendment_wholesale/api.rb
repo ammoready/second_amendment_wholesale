@@ -36,22 +36,16 @@ module SecondAmendmentWholesale
       set_request_headers(request, headers)
 
       request.body = data.is_a?(Hash) ? data.to_json : data
-      puts "request to hash #{request.to_hash.inspect}"
+
       process_request(request)
     end
 
     def process_request(request)
       uri = URI(request.path)
 
-      puts "URI #{uri.inspect}"
-      puts "URI methods #{uri.methods}"
-
       response = Net::HTTP.start(uri.host, uri.port, SecondAmendmentWholesale.config.proxy_address, SecondAmendmentWholesale.config.proxy_port, use_ssl: true) do |http|
         http.request(request)
       end
-
-      puts "RESPONSE #{response.inspect}"
-      puts "RESPONSE #{response.to_hash.inspect}"
 
       SecondAmendmentWholesale::Response.new(response)
     end
