@@ -16,7 +16,8 @@ module SecondAmendmentWholesale
     def url(item_number)
       response = get_request("products/#{item_number}/media", @headers).body
       
-      response.first[:file] if response.present?
+      return response.first[:file] if response.present?
+      nil
     end
 
   end
