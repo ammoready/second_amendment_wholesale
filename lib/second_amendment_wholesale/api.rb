@@ -42,11 +42,13 @@ module SecondAmendmentWholesale
 
     def process_request(request)
       uri = URI(request.path)
-      puts "REQUEST #{request.inspect}"
-      response = Net::HTTP.start(uri.host, SecondAmendmentWholesale.config.proxy_address, SecondAmendmentWholesale.config.proxy_port, uri.port, use_ssl: true) do |http|
+
+      puts "REQUEST #{request.path}"
+      
+      response = Net::HTTP.start(uri.host, uri.port, SecondAmendmentWholesale.config.proxy_address, SecondAmendmentWholesale.config.proxy_port, use_ssl: true) do |http|
         http.request(request)
       end
-      
+
       SecondAmendmentWholesale::Response.new(response)
     end
 
