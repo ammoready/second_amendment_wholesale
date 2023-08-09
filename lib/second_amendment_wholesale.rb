@@ -35,7 +35,7 @@ module SecondAmendmentWholesale
     def initialize
       @proxy_address ||= nil
       @proxy_port    ||= nil
-      @user_agent    ||= nil
+      @user_agent    ||= "SecondAmendmentWholesaleRubyGem/#{SecondAmendmentWholesale::VERSION}".freeze
     end
   end
 end
