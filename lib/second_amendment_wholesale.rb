@@ -30,10 +30,12 @@ module SecondAmendmentWholesale
   class Configuration
     attr_accessor :proxy_address
     attr_accessor :proxy_port
+    attr_accessor :user_agent
 
     def initialize
       @proxy_address ||= nil
       @proxy_port    ||= nil
+      @user_agent    ||= nil
     end
   end
 end

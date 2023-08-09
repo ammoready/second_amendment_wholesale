@@ -4,7 +4,6 @@ module SecondAmendmentWholesale
   module API
     
     ROOT_API_URL = 'https://staging.2ndamendmentwholesale.com/rest/V1'.freeze
-    USER_AGENT = "SecondAmendmentWholesaleRubyGem/#{SecondAmendmentWholesale::VERSION}".freeze
 
     def get_request(endpoint, headers = {})
       request = Net::HTTP::Get.new(request_url(endpoint))
@@ -51,7 +50,7 @@ module SecondAmendmentWholesale
     end
 
      def set_request_headers(request, headers)
-      request['User-Agent'] = USER_AGENT
+      request['User-Agent'] = SecondAmendmentWholesale.config.user_agent
 
       headers.each { |header, value| request[header] = value }
     end
