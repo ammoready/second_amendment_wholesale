@@ -4,8 +4,9 @@ module SecondAmendmentWholesale
     include SecondAmendmentWholesale::API
 
     ENDPOINTS = {
-      billing_address: "customers/me/billingAddress".freeze,
-      cart: "carts/mine".freeze,
+      billing_address: 'customers/me/billingAddress'.freeze,
+      cart: 'carts/mine'.freeze,
+      customer_note: 'carts/mine/set-customer-note'.freeze,
       items: 'carts/mine/items'.freeze,
       licence: "carts/licence".freeze,
       payment_information: 'carts/mine/payment-information'.freeze,
@@ -117,12 +118,14 @@ module SecondAmendmentWholesale
       get_request("orders/#{order_id}", @headers)
     end
 
-    def add_comment(order_id, comment)
+    def add_customer_note(customer_note)
       body = {
-        "comment": comment
+        "customerNote": {
+          "customer_note": customer_note
+        }
       }
 
-      post_request("order/#{order_id}/comments", body, @headers)
+      put_request(ENDPOINTS[:customer_note], body, @headers)
     end
 
     private
