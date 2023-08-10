@@ -5,7 +5,7 @@ describe SecondAmendmentWholesale::Inventory do
   let(:options) { { token: '123456' } }
 
   before do
-    stub_request(:get, "https://staging.2ndamendmentwholesale.com/rest/V1/feed/stockV2").
+    stub_request(:get, "https://www.2ndamendmentwholesale.com/rest/V1/feed/stockV2").
       with(headers: {'Authorization'=> 'Bearer 123456'}).
       to_return(:status => 200, :body => FixtureHelper.get_fixture_file('inventory.json').read, :headers => {})
   end

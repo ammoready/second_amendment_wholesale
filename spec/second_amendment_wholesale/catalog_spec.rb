@@ -5,15 +5,15 @@ describe SecondAmendmentWholesale::Catalog do
   let(:options) { { token: '123456' } }
 
   before do
-    stub_request(:get, "https://staging.2ndamendmentwholesale.com/rest/V1/feed/productV2").
+    stub_request(:get, "https://www.2ndamendmentwholesale.com/rest/V1/feed/productV2").
       with(headers: {'Authorization'=> 'Bearer 123456'}).
       to_return(:status => 200, :body => FixtureHelper.get_fixture_file('catalog.json').read, :headers => {})
 
-    stub_request(:get, "https://staging.2ndamendmentwholesale.com/rest/V1/feed/attributes").
+    stub_request(:get, "https://www.2ndamendmentwholesale.com/rest/V1/feed/attributes").
       with(headers: {'Authorization'=> 'Bearer 123456'}).
       to_return(:status => 200, :body => FixtureHelper.get_fixture_file('attributes.json').read, :headers => {})
 
-    stub_request(:get, "https://staging.2ndamendmentwholesale.com/rest/V1/categories").
+    stub_request(:get, "https://www.2ndamendmentwholesale.com/rest/V1/categories").
       with(headers: {'Authorization'=> 'Bearer 123456'}).
       to_return(:status => 200, :body => FixtureHelper.get_fixture_file('categories.json').read, :headers => {})
   end

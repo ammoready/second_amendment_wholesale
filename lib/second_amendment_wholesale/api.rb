@@ -3,7 +3,7 @@ require 'net/http'
 module SecondAmendmentWholesale
   module API
     
-    ROOT_API_URL = 'https://staging.2ndamendmentwholesale.com/rest/V1'.freeze
+    ROOT_API_URL = 'https://www.2ndamendmentwholesale.com/rest/V1'.freeze
 
     def get_request(endpoint, headers = {})
       request = Net::HTTP::Get.new(request_url(endpoint))
