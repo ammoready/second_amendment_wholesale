@@ -7,15 +7,15 @@ describe SecondAmendmentWholesale::Catalog do
   before do
     stub_request(:get, "https://staging.2ndamendmentwholesale.com/rest/V1/feed/productV2").
       with(headers: {'Authorization'=> 'Bearer 123456'}).
-      to_return(:status => 200, :body => FixtureHelper.get_fixture_file('Catalog.json').read, :headers => {})
+      to_return(:status => 200, :body => FixtureHelper.get_fixture_file('catalog.json').read, :headers => {})
 
     stub_request(:get, "https://staging.2ndamendmentwholesale.com/rest/V1/feed/attributes").
       with(headers: {'Authorization'=> 'Bearer 123456'}).
-      to_return(:status => 200, :body => FixtureHelper.get_fixture_file('Attributes.json').read, :headers => {})
+      to_return(:status => 200, :body => FixtureHelper.get_fixture_file('attributes.json').read, :headers => {})
 
     stub_request(:get, "https://staging.2ndamendmentwholesale.com/rest/V1/categories").
       with(headers: {'Authorization'=> 'Bearer 123456'}).
-      to_return(:status => 200, :body => FixtureHelper.get_fixture_file('Categories.json').read, :headers => {})
+      to_return(:status => 200, :body => FixtureHelper.get_fixture_file('categories.json').read, :headers => {})
   end
 
   describe '.all' do
