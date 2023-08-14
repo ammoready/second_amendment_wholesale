@@ -21,6 +21,8 @@ module SecondAmendmentWholesale
       )
 
       response.body.present?
+    rescue SecondAmendmentWholesale::Error::NotAuthorized => e
+      false
     end
 
   end
