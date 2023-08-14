@@ -6,11 +6,11 @@ module SecondAmendmentWholesale
 
       case @response
       when Net::HTTPUnauthorized
-        SecondAmendmentWholesale::Error::NotAuthorized.new(@response.body)
+        raise SecondAmendmentWholesale::Error::NotAuthorized.new(@response.body)
       when Net::HTTPNotFound
-        SecondAmendmentWholesale::Error::NotFound.new(@response.body)
+        raise SecondAmendmentWholesale::Error::NotFound.new(@response.body)
       when Net::HTTPBadRequest
-        SecondAmendmentWholesale::Error::BadRequest.new(@response.body)
+        raise SecondAmendmentWholesale::Error::BadRequest.new(@response.body)
       when Net::HTTPOK, Net::HTTPSuccess
         _data = (JSON.parse(@response.body) if @response.body.present?)
 
@@ -23,7 +23,7 @@ module SecondAmendmentWholesale
           _data
         end
       else
-        SecondAmendmentWholesale::Error::RequestError.new(@response.body)
+        raise SecondAmendmentWholesale::Error::RequestError.new(@response.body)
       end
 
     end
