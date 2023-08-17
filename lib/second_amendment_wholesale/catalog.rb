@@ -67,8 +67,10 @@ module SecondAmendmentWholesale
     end
 
     def get_features(sku)
-      attributes = @attributes.find{ |attribute| attribute[:sku] == sku }
+      attributes = @attributes.find { |attribute| attribute[:sku] == sku }
 
+      return {} unless attributes.present?
+      
       {
         caliber: attributes[:caliber1],
         action: attributes[:action_type],
