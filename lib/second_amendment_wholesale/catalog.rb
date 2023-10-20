@@ -28,7 +28,7 @@ module SecondAmendmentWholesale
       response = get_request("feed/productV2", @headers)
 
       response.body.each do |item|
-        products << map_product(item) unless item[:allocated_closeout] == "Allocated"
+        products << map_product(item)
       end
 
       products
@@ -52,7 +52,7 @@ module SecondAmendmentWholesale
         item_identifier: item[:stock_number],
         brand: item[:manufacturer_name],
         mfg_number: item[:mpn],
-        features: get_features(item[:stock_number]),
+        features: get_features(item.slice(:stock_number, :ap_spend, :moqpts)),
       }
     end
 
@@ -66,12 +66,14 @@ module SecondAmendmentWholesale
       categories.compact.pluck(:name).join(" ")
     end
 
-    def get_features(sku)
-      attributes = @attributes.find { |attribute| attribute[:sku] == sku }
+    def get_features(item)
+      attributes = @attributes.find { |attribute| attribute[:sku] == item[:stock_number] }
 
       return {} unless attributes.present?
       
       {
+        purchase_limit: item[:moqpts],
+        allocation_points: item[:ap_spend],
         caliber: attributes[:caliber1],
         action: attributes[:action_type],
         barrel_type: attributes[:barrel_type],
